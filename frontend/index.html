@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+
+    <div class="container">
+        <h1 class="head">Story Writer</h1>
+        <hr>
+      <div class="search-box">
+        <textarea class="item" type="text" id="s" placeholder="Enter Your Jokes Keyword"></textarea>
+
+        <select class="item" name="" id="lang">
+            <option value="" >Select Your Language</option>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+            <option value="Bhojpuri">Bhojpuri</option>
+
+        </select>
+
+     
+
+        <button class="item" id="btn">Search</button>
+      </div>
+
+      <hr>
+      <div>
+    
+
+        <span>
+        <div>
+        <b class="btag"></b>
+        </div>
+       </span>
+
+   
+      </div>
+    </div>
+
+    <!-- <p class="ptag"></p> -->
+  </body>
+</html>
+<script>
+    // lang
+    let lang = document.querySelector("#lang")
+    // search 
+  let s = document.querySelector("#s");
+  
+//   word 
+let word = document.querySelector("#word");
+
+
+  let btag = document.querySelector(".btag");
+
+
+  let btn = document.querySelector("#btn");
+
+  btn.addEventListener("click", () => {
+    let obj = { "text": s.value ,
+             "lang" : lang.value }
+             
+
+    
+
+    async function append() {
+      console.log(obj)
+        try {
+            let res = await fetch("http://localhost:2000/text", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(obj),
+      });
+
+      // console.log(res)
+      if (res.ok) {
+        let data = await res.json();
+        console.log(data.result)
+        let x = data.result.split("\"").join(" ");
+
+        btag.innerHTML = `${data.result}`
+      }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    append();
+  });
+</script>

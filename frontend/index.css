@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+
+    background: url("https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-255379.jpg&fm=jpg");
+}
+
+.head{
+    text-align: center;
+    color: rgb(241, 212, 217);
+}
+
+div{
+    padding-top: 10px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 60%;
+    overflow: auto;
+    height: 100vh;
+    background-color: #010c29;
+}
+
+.search-box {
+    display: flex; /* Set the container as a flex container */
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: flex-start; /* Align items to the top of the container */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: #f0f0f0; 
+    
+}
+
+.item{
+    flex: 1; /* Allow items to grow and fill available space equally */
+    min-width: calc(33.33% - 20px); /* Set a minimum width for each item with some margin */
+    margin: 10px; /* Add margin around each item */
+    background-color: #072c45; /* Background color for the items */
+    color: white; /* Text color for better contrast */
+    /* text-align: center; Center the content horizontally */
+    font-size: 20px;
+    padding: 15px; /* Add padding within each item */
+}
+
+
+#s{
+    padding: 10px;
+
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    
+    margin: 0px 20px;
+}
+
+#word{
+    padding: 10px;
+    margin: 0px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 120px;
+}
+
+#lang{
+    padding: 10px;
+    margin: 0px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 230px; 
+}
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2c6fd5;
+}
+
+button:active {
+    background-color: #1e4ab5;
+}
+
+.btag{
+    color: white;
+}
+
+
+/* Media Query  */
+
+@media (max-width: 768px) {
+    .item {
+      min-width: calc(50% - 20px); /* Adjust the width for smaller screens */
+    }
+}
