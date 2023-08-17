@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>StoryMaking.ai</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHRvtFUvNT9Rrpz2HE4gu05hPPg8m7DweCg&usqp=CAU" type="image/x-icon">
   </head>
   <body>
 
@@ -41,10 +42,12 @@
       </div>
     </div>
 
+    <div style="background-color: rgb(13, 11, 32); text-align: center; padding: 10px;margin-top: 5px; font-family: cursive; font-weight: bold; color: yellow;">......Create By @Tarun Kumar [Web Developer]......</div>
     <!-- <p class="ptag"></p> -->
   </body>
 </html>
 <script>
+  let url = "https://story-writer-backend.onrender.com"
     // lang
     let lang = document.querySelector("#lang")
     // search 
@@ -69,7 +72,7 @@ let word = document.querySelector("#word");
     async function append() {
       console.log(obj)
         try {
-            let res = await fetch("http://localhost:2000/text", {
+            let res = await fetch(`${url}/text`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(obj),
