@@ -122,5 +122,17 @@ button:active {
 @media (max-width: 768px) {
     .item {
       min-width: calc(50% - 20px); /* Adjust the width for smaller screens */
+      margin-top: 10px;
+    }
+
+}
+
+@media (max-width : 400px) {
+    .container{
+        width: 89%;
+        margin-left: 0px;
+        font-size: 20px;
+        height: 82.5vh;
+        border-radius: 0px;
     }
 }
